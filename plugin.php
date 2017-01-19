@@ -154,7 +154,7 @@ function minqueue_styles() {
 }
 
 /**
- * Plugn activation callback
+ * Plugin activation callback
  *
  * Display admin notice with instructions.
  *
@@ -174,7 +174,7 @@ function minqueue_activation_hook() {
 }
 
 /**
- * Plugn deactivate callback
+ * Plugin deactivate callback
  *
  * Delete all options and files.
  *
