@@ -154,6 +154,21 @@ function minqueue_styles() {
 }
 
 /**
+ * Asynchronously load Minqueue scripts
+ * @param  string $tag    HTML string with <script> tag
+ * @param  string $handle handle of the script
+ * @return string HTML string with the <script> tag
+ */
+function add_async_attribute( $tag, $handle ) {
+    if ( strpos( $handle, 'minqueue-' ) !== false ) {
+        return str_replace(' src', ' async="async" src', $tag);
+    }
+
+    return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
+/**
  * Plugin activation callback
  *
  * Display admin notice with instructions.
